@@ -13,9 +13,9 @@ export const checker = (value) => {
    category = [
     { value: 'Prime Beef', label: 'Prime Beef', name: "category" },
     { value: 'Pork & Lamb', label: 'Pork & Lamb', name: "category" },
+    { value: 'Beef', label: 'Beef', name: "category" },
     { value: 'Seafood', label: 'Seafood', name: "category" },
     { value: 'Poultry', label: 'Poultry', name: "category" },
-    { value: 'Meat', label: 'Meat' },
    ]
    break;
   case 'Produce':
