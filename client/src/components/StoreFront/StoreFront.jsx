@@ -8,7 +8,8 @@ export default class StoreFront extends Component {
  constructor() {
   super()
   this.state = {
-   products: null
+   products: null,
+   listDataFromChild: []
   }
  }
  async componentDidMount() {
@@ -16,11 +17,18 @@ export default class StoreFront extends Component {
   this.setState({ products })
  }
 
+ setListDataFromChild = listDataFromChild => this.setState({ listDataFromChild })
+
+ myCallback = (dataFromChild) => {
+  this.setState({ listDataFromChild: dataFromChild }, this.props.setSearchProducts(null));
+ }
+
  render() {
+  console.log("StoreFront", this.state.listDataFromChild)
   return (
    <div className="store-front">
-    <StoreHeader user={this.props.user} setSearchProducts={this.props.setSearchProducts} />
-    <StoreBody user={this.props.user} searchProducts={this.props.searchProducts} products={this.state.products} setSearchProducts={this.props.setSearchProducts} />
+    <StoreHeader user={this.props.user} setSearchProducts={this.props.setSearchProducts} products={this.state.products} callbackFromParent={this.myCallback} />
+    <StoreBody user={this.props.user} searchProducts={this.props.searchProducts} products={this.state.products} setSearchProducts={this.props.setSearchProducts} listDataFromChild={this.state.listDataFromChild} setListDataFromChild={this.setListDataFromChild} />
    </div>
   );
  }

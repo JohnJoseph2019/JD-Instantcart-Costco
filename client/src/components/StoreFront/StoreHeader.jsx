@@ -5,25 +5,27 @@ import SearchBar from './SearchBar'
 import { Link } from 'react-router-dom'
 
 export default class StoreHeader extends Component {
-  render() {
-    return (
-      <div className='apple-header'>
-        <StoreFrontNavBar user={this.props.user} />
 
-        <div className="circle-logo">
-          <img className="costco-logo" src={require("../../images/costco-logo2.png")} alt="costco-logo" />
-        </div>
+ render() {
+  console.log("In StoreHeader", this.props)
+  return (
+   <div className='apple-header'>
+    <StoreFrontNavBar user={this.props.user} products={this.props.products} callbackFromParent={this.props.callbackFromParent} />
 
-        <div className="costco-title">Costco</div>
+    <div className="circle-logo">
+     <img className="costco-logo" src={require("../../images/costco-logo2.png")} alt="costco-logo" />
+    </div>
 
-        <div className="view-more-links">
-          <Link to="#">View pricing policy</Link>
-          <span className="dot">•</span>
-          <Link to="#">More info</Link>
-        </div>
+    <div className="costco-title">Costco</div>
 
-        <SearchBar setSearchProducts={this.props.setSearchProducts} searchProducts={this.props.searchProducts} />
-      </div>
-    )
-  }
+    <div className="view-more-links">
+     <Link to="#">View pricing policy</Link>
+     <span className="dot">•</span>
+     <Link to="#">More info</Link>
+    </div>
+
+    <SearchBar setSearchProducts={this.props.setSearchProducts} searchProducts={this.props.searchProducts} />
+   </div>
+  )
+ }
 }
