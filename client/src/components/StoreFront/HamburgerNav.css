@@ -100,7 +100,6 @@ ul, li, .department-item-hamburger {
   border-radius: 5px
 }
 
-
 @media(min-width: 900px){
   .hamburger-menu{
     display: none
