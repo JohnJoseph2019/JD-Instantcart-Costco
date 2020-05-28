@@ -18,7 +18,6 @@ export default class HamburgerNav extends Component {
    this.setState({ menuOpen: true });
   }
  }
- // }
  handleMenuClick = (event, property, value) => {
   event.preventDefault();
   this.setState({ menuOpen: false }, this.props.callbackFromParent(hamburgerLink(this.props.products, property, value)));
