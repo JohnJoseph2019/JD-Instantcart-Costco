@@ -71,7 +71,8 @@ export default class Departments extends Component {
 
        </ul>
 
-       <li><Link className="department-item" to="#" onClick={() => linkNavBar(this.props.products, this.props.setFound, 'category', "Meat")}>Back to Main</Link></li>
+       <li><Link className="department-item" to="#" onClick={() => linkNavBar(this.props.products, this.props.setFound, 'none', 'none')}>Back to Main</Link></li>
+
 
 
       </li>
