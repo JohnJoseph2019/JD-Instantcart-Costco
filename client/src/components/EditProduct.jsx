@@ -96,8 +96,8 @@ class PostEdit extends Component {
         <div className="editProduct-label">Name:</div>
         <input
          className="editProduct"
-         placeholder="Brand"
-         value={product.Name}
+         placeholder="Name"
+         value={product.name}
          name="name"
          required
          autoFocus
